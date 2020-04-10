@@ -80,6 +80,6 @@ function Animal (name, type, breed) {
  * from your browser's console.
  */
 function helloworld() {
-    return 'hello world!';
+    return 'hello world! test';
 }
 
