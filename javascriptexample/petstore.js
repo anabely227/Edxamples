@@ -10,6 +10,20 @@
  */
 function calculateFoodOrder(numAnimals, avgFood) {
     // IMPLEMENT THIS FUNCTION!
+    var totalFood;
+
+    if (numAnimals > 0 && avgFood > 0){
+    
+      if (!isNaN(avgFood) && !isNaN(numAnimals)){
+        totalFood=numAnimals*avgFood;
+        console.log(totalFood);
+      }
+
+    }else{
+        totalFood=-1;
+    }
+
+    return 'Total amount of pet food: '+ totalFood.toFixed(2);
 }
 
 /**
@@ -23,6 +37,58 @@ function calculateFoodOrder(numAnimals, avgFood) {
  */
 function mostPopularDays(week) {
     // IMPLEMENT THIS FUNCTION!
+
+    //var x= week.length;
+    var days = [];
+    //var y= week[1,1];
+
+    //When the array is null
+    if(week==null){
+        console.log("there is not information!");
+        return null;
+    }else{
+        //When the array is 0
+        if(week.length == 0)
+        {
+            console.log ("There are not days!");
+            return days;
+        }
+        // when the array has more the one day
+        else {
+
+         
+        var t=0; 
+        var m=0;
+        var i=0;
+
+        for (i=0 ; i< week.length ; i++){
+        
+            if(t<week[i].traffic){
+                t=week[i].traffic;
+                m=i;               
+            }
+            else
+            {
+                if (t==week[i].traffic && t>0){
+                    t=week[i].traffic;
+                    days.push(week[i].name);                   
+                }
+            }
+        }        
+        days.push(week[m].name);
+                
+            /* days=week.map(function (obj) {
+              return obj.name;
+            });*/
+
+        console.log("The most popular days are: "+ days)
+
+        return days;
+        }
+
+    }
+
+
 }
 
 
@@ -39,6 +105,7 @@ function mostPopularDays(week) {
  */
 function createAnimalObjects(names, types, breeds) {
     // IMPLEMENT THIS FUNCTION!
+    var animals = new Animal(names,types,breeds);
 }
 
 /////////////////////////////////////////////////////////////////
