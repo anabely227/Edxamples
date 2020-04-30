@@ -6,6 +6,7 @@ class Lists extends Component {
 
   render() {
     // If there are no lists, display a relevant message
+    console.log(this.props.lists.length);
     if(this.props.lists.length === 0) {
       return (
         <div id="listsDiv" className="List">

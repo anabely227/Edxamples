@@ -5,8 +5,8 @@ import './App.css';
 
 class App extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
 	lists: [], // this holds the name of each list
 	items: {} // this property names of this object are the names of the lists; their values are arrays of the items in each list
@@ -20,7 +20,16 @@ class App extends Component {
    * as the value put into the "lists" array. It should then re-render this App component.
    */
   handleAddList(s) {
+
+    
       // Implement this function!
+      let lists = this.state.lists;
+      lists.push(s);
+      this.setState({lists:lists});
+
+      let items = this.state.items;
+      items[s] = [];
+      this.setState({items:items});
   }
 
   /**
@@ -33,6 +42,8 @@ class App extends Component {
    */
   handleAddItem(s) {
       // Implement this function!
+
+
   }
 
   /**
