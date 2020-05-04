@@ -2,17 +2,19 @@ import React, { Component } from 'react';
 
 class AddItem extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      newItem:{}
+      newItem:""
     }
   }
 
   handleSubmit(e) {
       e.preventDefault(); // this prevents the page from reloading -- do not delete this line!
 
-      // Implement the rest of this function here!
+      this.setState({newItem:this.refs.id.value}, function(){
+        this.props.addItem({name:this.state.newItem,idName:this.props.idName});
+      });
   }
     
 

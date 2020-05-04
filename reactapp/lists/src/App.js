@@ -42,8 +42,10 @@ class App extends Component {
    */
   handleAddItem(s) {
       // Implement this function!
-
-
+      let items = this.state.items;
+      items[s.idName].push({name: s.name});
+      this.setState({items:items});
+   
   }
 
   /**

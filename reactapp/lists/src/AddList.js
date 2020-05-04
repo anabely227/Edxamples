@@ -14,8 +14,6 @@ class AddList extends Component {
     this.setState({name:this.refs.id.value}, function(){
       this.props.addList(this.state.name);
     });
-
-    console.log('This state'+ this.state);
   }
 
   render() {
